@@ -1,1 +1,2 @@
-include
+lib/libdedisp.so
+lib/libdedisp.so.1

@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: dedisp
-Source: https://github.com/ajameson/dedisp
+Source: https://github.com/ewanbarr/dedisp
 
 Files: debian/*
 Copyright: 2018 Gijs Molenaar >gijs@pythonic.nl>

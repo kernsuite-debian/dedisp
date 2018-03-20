@@ -1,3 +1,10 @@
+dedisp (0+git20171127-1kern1) bionic; urgency=medium
+
+  * New upstream version 0+git20171127
+  * switched to https://github.com/ewanbarr/dedisp version
+
+ -- KERN packaging <packaging@kernsuite.info>  Tue, 20 Mar 2018 08:42:33 +0000
+
 dedisp (0+git20170202-1kern1) bionic; urgency=low
 
   * Initial release.

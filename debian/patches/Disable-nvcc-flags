@@ -1,0 +1,13 @@
+Description: These nvcc flags don't work
+
+--- dedisp-0+git20171127.orig/Makefile.inc
++++ dedisp-0+git20171127/Makefile.inc
+@@ -12,7 +12,7 @@ LIB_ARCH   = lib64
+ GCC        = gcc
+ GXX        = g++
+ AR         = ar
+-NVCC       = $(CUDA_DIR)/bin/nvcc -Xptxas -abi=no
++NVCC       = $(CUDA_DIR)/bin/nvcc # -Xptxas -abi=no
+ DOXYGEN    = doxygen
+ RM         = rm
+ ECHO       = echo

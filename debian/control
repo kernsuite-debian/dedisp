@@ -4,11 +4,10 @@ Priority: optional
 Maintainer: KERN packaging <packaging@kernsuite.info>
 Build-Depends: debhelper (>=9), nvidia-cuda-toolkit
 Standards-Version: 3.9.8
-Homepage: https://github.com/ajameson/dedisp
+Homepage: https://github.com/ewanbarr/dedisp
 
 Package: libdedisp1
-Architecture: all
-Multi-Arch: foreign
+Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: CUDA Based De-dispersion library
  Dedisp is a C library for computing the incoherent dedispersion transform
@@ -18,9 +17,8 @@ Description: CUDA Based De-dispersion library
  and should be familiar to users of that package.
 
 Package: dedisp-dev
-Architecture: all
-Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libdedisp1
 Description: CUDA Based De-dispersion library
  Dedisp is a C library for computing the incoherent dedispersion transform
  using a GPU. It takes filterbank data as input and computes multiple
