@@ -1,4 +1,3 @@
-
 include Makefile.inc
 
 # Output directories
@@ -33,16 +32,19 @@ A_NAME    := $(LIB_DIR)/$(LIB_NAME)$(A_EXT)
 
 PTX_NAME  := ./dedisp_kernels.ptx
 
-all: shared
+all: directories shared
 
-#$(ECHO) Building shared library $(SO_FILE)
+directories:
+	@mkdir -p ${LIB_DIR}
+	@mkdir -p ${OBJ_DIR}
+	@mkdir -p ${BIN_DIR}
+
+#$(ECHO) Building shared library "libdedisp.so.1.0.1"
 shared: $(SO_NAME)
 
 $(SO_NAME): $(SOURCES) $(HEADERS)
-	mkdir -p $(LIB_DIR)
-	mkdir -p $(OBJ_DIR)
-	$(NVCC) -c -Xcompiler "-fPIC -Wall" $(OPTIMISE) $(DEBUG) -arch=$(GPU_ARCH) $(INCLUDE) -o $(OBJ_DIR)/dedisp.o $(SRC_DIR)/dedisp.cu
-	$(GCC) -shared -Wl,--version-script=libdedisp.version,-soname,$(LIB_NAME)$(SO_EXT).$(MAJOR) -o $(SO_NAME) $(OBJ_DIR)/dedisp.o $(LIB)
+	$(NVCC) -c -Xcompiler "-fPIC -Wall" $(OPTIMISE) $(DEBUG) $(INCLUDE) -o $(OBJ_DIR)/dedisp.o $(SRC_DIR)/dedisp.cu
+	$(GCC) -shared -Wl,--version-script=libdedisp.version,-soname,$(LIB_NAME)$(SO_EXT).$(MAJOR) $(LIB) -o $(SO_NAME) $(OBJ_DIR)/dedisp.o
 	ln -s -f $(SO_FILE) $(LIB_DIR)/$(LIB_NAME)$(SO_EXT).$(MAJOR)
 	ln -s -f $(SO_FILE) $(LIB_DIR)/$(LIB_NAME)$(SO_EXT)
 	cp $(INTERFACE) $(INCLUDE_DIR)
@@ -62,13 +64,14 @@ test: $(SO_NAME)
 ptx: $(PTX_NAME)
 
 $(PTX_NAME): $(SOURCES) $(LIB_DIR)/libdedisp.so $(HEADERS)
-	$(NVCC) -ptx -Xcompiler "-fPIC -Wall" $(OPTIMISE) $(DEBUG) -arch=$(GPU_ARCH) $(INCLUDE) -o $(PTX_NAME) $(SRC_DIR)/dedisp.cu
+	$(NVCC) -ptx -Xcompiler "-fPIC -Wall" $(OPTIMISE) $(DEBUG) $(INCLUDE) -o $(PTX_NAME) $(SRC_DIR)/dedisp.cu
 
 doc: $(SRC_DIR)/dedisp.h Doxyfile
 	$(DOXYGEN) Doxyfile
 
 clean:
-	$(RM) -f $(SO_NAME) $(A_NAME) $(OBJ_DIR)/*.o $(LIB_DIR)/*.so $(LIB_DIR)/*.so.1
+	$(RM) -f $(SO_NAME) $(A_NAME) $(OBJ_DIR)/*.o
+	
 
 install: all
 	cp $(INTERFACE) $(INSTALL_DIR)/include/
