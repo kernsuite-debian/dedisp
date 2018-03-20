@@ -1,0 +1,24 @@
+Description: Set installation path
+
+--- dedisp-0+git20170202.orig/Makefile
++++ dedisp-0+git20170202/Makefile
+@@ -71,6 +71,7 @@ clean:
+ 	$(RM) -f $(SO_NAME) $(A_NAME) $(OBJ_DIR)/*.o $(LIB_DIR)/*.so $(LIB_DIR)/*.so.1
+ 
+ install: all
++	mkdir -p $(INSTALL_DIR)/include $(INSTALL_DIR)/lib
+ 	cp $(INTERFACE) $(INSTALL_DIR)/include/
+ 	cp $(CPP_INTERFACE) $(INSTALL_DIR)/include/
+ 	cp $(SO_NAME) $(INSTALL_DIR)/lib/
+--- dedisp-0+git20170202.orig/Makefile.inc
++++ dedisp-0+git20170202/Makefile.inc
+@@ -1,7 +1,7 @@
+ # The definitions in this file should be changed to match your system
+ 
+-CUDA_PATH ?= /usr/local/cuda
+-INSTALL_DIR = $(HOME)/linux_64
++CUDA_PATH ?= /usr
++INSTALL_DIR = $(DESTDIR)/usr
+ 
+ CUDA_DIR   ?= $(CUDA_PATH)
+ THRUST_DIR ?= $(CUDA_DIR)/include
