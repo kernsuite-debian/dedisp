@@ -213,5 +213,3 @@ void DedispPlan::execute_guru(size_type        nsamps,
 	                                 flags),
 	             "dedisp_execute_guru" );
 }
-
-
