@@ -1,0 +1,9 @@
+*.substvars
+.debhelper/
+*.debhelper.log
+files
+*.debhelper.log
+libdedisp1/
+dedisp-dev/
+tmp/
+
