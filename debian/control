@@ -10,7 +10,7 @@ Homepage: https://github.com/ewanbarr/dedisp
 
 Package: libdedisp-ewanbarr1
 Replaces: libdedisp1
-Conflicts: libdedips1
+Conflicts: libdedips1, libdedisp-ajameson1
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: CUDA Based De-dispersion library
@@ -22,9 +22,9 @@ Description: CUDA Based De-dispersion library
 
 Package: dedisp-ewanbarr-dev
 Replaces: dedisp-dev
-Conflicts: dedisp-dev
+Conflicts: dedisp-dev, dedisp-ajameson-dev
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, libdedisp1
+Depends: ${misc:Depends}, ${shlibs:Depends}, libdedisp-ewanbarr1
 Description: CUDA Based De-dispersion library
  Dedisp is a C library for computing the incoherent dedispersion transform
  using a GPU. It takes filterbank data as input and computes multiple
