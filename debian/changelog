@@ -1,4 +1,4 @@
-dedisp-ewanbarr (0.0~git20171127.7aa2a81-1) UNRELEASED; urgency=medium
+dedisp-ewanbarr (0.0~git20171127.7aa2a81-1) bionic; urgency=medium
 
   [ Gijs Molenaar ]
   * rename package

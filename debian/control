@@ -9,6 +9,8 @@ Standards-Version: 3.9.8
 Homepage: https://github.com/ewanbarr/dedisp
 
 Package: libdedisp-ewanbarr1
+Replaces: libdedisp1
+Conflicts: libdedips1
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: CUDA Based De-dispersion library
@@ -19,6 +21,8 @@ Description: CUDA Based De-dispersion library
  and should be familiar to users of that package.
 
 Package: dedisp-ewanbarr-dev
+Replaces: dedisp-dev
+Conflicts: dedisp-dev
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libdedisp1
 Description: CUDA Based De-dispersion library
