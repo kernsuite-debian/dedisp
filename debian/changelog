@@ -1,3 +1,12 @@
+dedisp-ewanbarr (0.0~git20171127.7aa2a81-1) UNRELEASED; urgency=medium
+
+  [ Gijs Molenaar ]
+  * rename package
+  * add watch file
+  * New upstream version 0.0~git20171127.7aa2a81
+
+ -- KERN packaging <packaging@kernsuite.info>  Mon, 20 Aug 2018 11:31:31 +0200
+
 dedisp (0+git20171127-1kern1) bionic; urgency=medium
 
   * New upstream version 0+git20171127

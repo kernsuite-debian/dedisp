@@ -3,7 +3,7 @@ Upstream-Name: dedisp
 Source: https://github.com/ewanbarr/dedisp
 
 Files: debian/*
-Copyright: 2018 Gijs Molenaar >gijs@pythonic.nl>
+Copyright: 2018 Gijs Molenaar <gijs@pythonic.nl>
 License: MIT
 
 Files:     Doxyfile

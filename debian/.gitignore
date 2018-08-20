@@ -2,8 +2,7 @@
 .debhelper/
 *.debhelper.log
 files
-*.debhelper.log
-libdedisp1/
-dedisp-dev/
+dedisp-ewanbarr-dev/
+libdedisp-ewanbarr1/
 tmp/
 
